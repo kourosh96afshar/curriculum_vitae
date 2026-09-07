@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 
-class AppColor {
-  AppColor._();
-  static const Color darkBlack = Color(0xFF000000);
-  static const Color darkBackground = Color(0xFF1E1E1E);
-  static const Color textTheme = Color(0xFFFFFFFF);
-  static const Color skillBackground = Color(0xFF292929);
-  static const Color blueShadow = Color(0xFF0096FF);
-  static const Color pinkShadow = Color(0xFFFFC0CB);
-  static const Color orangeShadow = Color(0xFFFFA500);
-  static const Color purpleShadow = Color(0xFF800080);
+class AppColors {
+  AppColors._();
+
+  ///theme
+  static Color primary = Color(0xFFec407a);
+
+  ///dark-Theme
+  static const Color primaryDarkTextColor = Color(0xFFffffff);
+  static const Color secondaryDarkTextColor = Color(0xB3ffffff);
+  static const Color surfaceDarkColor = Color(0x0Dffffff);
+  static const Color backgroundDarkColor = Color(0xFF1e1e1e);
+  static const Color appBarDarkColor = Color(0xFF000000);
+
+  ///lighit-Theme
+  static Color primaryLightTextColor = Color(0xFF212121);
+  static Color secondaryLightTextColor = Color(0xFF212121)
+      .withValues(alpha: 0.8);
+  static const Color appBarLightColor = Color(0xFFebebeb);
 }

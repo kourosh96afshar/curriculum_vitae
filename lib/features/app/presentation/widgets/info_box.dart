@@ -1,4 +1,7 @@
-
+import 'package:curriculum_vitae/config/localization/l10n/app_localizations.dart';
+import 'package:curriculum_vitae/config/theme/app_colors.dart';
+import 'package:curriculum_vitae/core/assets-address/app_assets.dart';
+import 'package:curriculum_vitae/core/design_system/app_spacing.dart';
 import 'package:flutter/material.dart';
 
 class InfoBox extends StatelessWidget {
@@ -6,14 +9,12 @@ class InfoBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context)!;
     final crossStart = CrossAxisAlignment.start;
     final textTheme = Theme.of(context).textTheme.bodySmall;
-    return 
-    // Padding(
-    //   padding: AppSizes.sym3016,
-    //   child:
-       Column(
+    return Padding(
+      padding: AppSpacing.sym3016,
+      child: Column(
         crossAxisAlignment: crossStart,
         spacing: 20,
         children: [
@@ -22,29 +23,28 @@ class InfoBox extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadiusGeometry.circular(10),
-                child:Text('data')
-                //  Image.asset(
-                //   height: 70,
-                //   width: 70,
-                //   AppAddress.profileImage,
-                // ),
+                child: Image.asset(
+                  height: 70,
+                  width: 70,
+                  AppImagesAsset.profileImage,
+                ),
               ),
               Expanded(
                 child: Column(
                   crossAxisAlignment: crossStart,
                   children: [
-                    // Text(localizations.name, style: textTheme),
+                    Text(localizations.name, style: textTheme),
                     Row(
                       children: [
-                        // Text(localizations.job, style: textTheme),
+                        Text(localizations.job, style: textTheme),
                         Spacer(),
                         Icon(Icons.favorite_border_sharp),
                       ],
                     ),
                     Row(
                       children: [
-                        // Icon(Icons.location_on,color: AppColors.textTheme,),
-                        // Text(localizations.location, style: textTheme),
+                        Icon(Icons.location_on, color: AppColors.appBarDarkColor),
+                        Text(localizations.location, style: textTheme),
                       ],
                     ),
                   ],
@@ -52,9 +52,9 @@ class InfoBox extends StatelessWidget {
               ),
             ],
           ),
-          // Text(localizations.summary, style: textTheme),
+          Text(localizations.summary, style: textTheme),
         ],
-      );
-    // );
+      ),
+    );
   }
 }

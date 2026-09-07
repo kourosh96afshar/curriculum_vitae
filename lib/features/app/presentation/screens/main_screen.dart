@@ -1,4 +1,5 @@
 import 'package:curriculum_vitae/core/component/custom_app_bar.dart';
+import 'package:curriculum_vitae/features/app/presentation/widgets/info_box.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -31,8 +32,8 @@ class _MainScreenState extends State<MainScreen> {
           spacing: 20,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // InfoBox(),
-            // Divider(),
+            InfoBox(),
+            Divider(),
             // SkillsBox(),
             // Divider(),
             // PersonalInformation(),

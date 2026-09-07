@@ -1,5 +1,4 @@
 import 'package:curriculum_vitae/config/localization/l10n/app_localizations.dart';
-import 'package:curriculum_vitae/config/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -14,7 +13,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   final bool isDark;
 
   @override
-  Size get preferredSize => Size.fromHeight(80);
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
 
   @override
   State<CustomAppBar> createState() => _CustomAppBarState();
@@ -24,13 +23,9 @@ class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(
-        AppLocalizations.of(context)!.profileTitle,
-        style: Theme.of(context).textTheme.bodySmall,
-      ),
+      title: Text(AppLocalizations.of(context)!.profileTitle),
       titleSpacing: 20,
       actionsPadding: EdgeInsets.only(right: 20),
-      backgroundColor: AppColor.darkBlack,
       actions: [
         IconButton(
           onPressed: widget.updateLanguage,

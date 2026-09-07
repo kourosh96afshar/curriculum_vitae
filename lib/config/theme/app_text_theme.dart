@@ -1,35 +1,44 @@
-import 'package:curriculum_vitae/config/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTextThemes {
   AppTextThemes._();
 
-  static final TextTheme en = _enPrimaryTextTheme();
+  static TextTheme en(ColorScheme colorScheme) {
+    return _enPrimaryTextTheme(colorScheme);
+  }
 
-  static final TextTheme fa = _faPrimaryTextTheme();
+  static TextTheme fa(ColorScheme colorScheme) {
+    return _faPrimaryTextTheme(colorScheme);
+  }
 
-  static TextTheme _enPrimaryTextTheme() {
+  static TextTheme _enPrimaryTextTheme(ColorScheme colorScheme) {
+    TextStyle appTextStyle(double fontSize) {
+      return TextStyle(fontSize: fontSize, color: colorScheme.onSurface);
+    }
+
     return GoogleFonts.latoTextTheme(
       TextTheme(
-        bodySmall: TextStyle(
-          color: AppColor.textTheme,
-          fontSize: 14,
-          height: 1.5,
-        ),
+        displaySmall: appTextStyle(36),
+        displayMedium: appTextStyle(45),
+        displayLarge: appTextStyle(57),
+        headlineSmall: appTextStyle(24),
+        headlineMedium: appTextStyle(28),
+        headlineLarge: appTextStyle(32),
+        titleSmall: appTextStyle(14),
+        titleMedium: appTextStyle(16),
+        titleLarge: appTextStyle(22),
+        bodySmall: appTextStyle(12),
+        bodyMedium: appTextStyle(14),
+        bodyLarge: appTextStyle(16),
+        labelSmall: appTextStyle(11),
+        labelMedium: appTextStyle(12),
+        labelLarge: appTextStyle(14),
       ),
     );
   }
 
-  static TextTheme _faPrimaryTextTheme(   
-) {
-    return TextTheme(
-      bodySmall: TextStyle(
-        color: AppColor.textTheme,
-        fontSize: 14,
-        height: 1.5,
-        fontFamily: 'Vazirmatn',
-      ),
-    );
+  static TextTheme _faPrimaryTextTheme(ColorScheme colorScheme) {
+    return TextTheme();
   }
 }

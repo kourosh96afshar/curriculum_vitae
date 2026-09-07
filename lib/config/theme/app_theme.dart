@@ -14,30 +14,39 @@ class AppTheme {
   }
 
   static ThemeData _buildLightTheme(String languageCode) {
-    return ThemeData(
-      useMaterial3: false,
+    ColorScheme colorScheme = ColorScheme.light(
       brightness: Brightness.light,
-      dividerTheme: DividerThemeData(color: AppColor.darkBlack),
-      iconTheme: IconThemeData(color: Colors.white, size: 18),
-      textTheme: languageCode == 'en' ? AppTextThemes.en : AppTextThemes.fa,
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          minimumSize: Size(double.infinity, 50),
-          // backgroundColor: AppColors.pinkShadow,
-        ),
+      primary: AppColors.primary,
+      secondary: AppColors.secondaryLightTextColor,
+      surface: AppColors.primaryDarkTextColor,
+      outlineVariant: AppColors.secondaryDarkTextColor,
+    );
+    return ThemeData(
+      useMaterial3: true,
+      colorScheme: colorScheme,
+      textTheme: languageCode == 'en'
+          ? AppTextThemes.en(colorScheme)
+          : AppTextThemes.fa(colorScheme),
+
+      appBarTheme: AppBarTheme(
+        elevation: 0,
+        backgroundColor: AppColors.appBarLightColor,
+        foregroundColor: AppColors.primaryLightTextColor,
       ),
-      inputDecorationTheme: InputDecorationTheme(
-        border: OutlineInputBorder(
-          borderSide: BorderSide.none,
-          // borderRadius: AppSizes.circle10,
-        ),
-      ),
-      outlinedButtonTheme: OutlinedButtonThemeData(),
-      scaffoldBackgroundColor: AppColor.textTheme,
+
+      // inputDecorationTheme: InputDecorationTheme(
+      //   labelStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+      //   border: OutlineInputBorder(
+      //       borderRadius: BorderRadius.circular(8),
+      //       borderSide: BorderSide.none),
+      //   filled: true,
+      //   fillColor: surfaceColor,
+      // ),
+      // outlinedButtonTheme: OutlinedButtonThemeData(),
     );
   }
 
   static ThemeData _buildDarkTheme(String languageCode) {
-    return ThemeData();
+    return ThemeData(useMaterial3: true, brightness: Brightness.dark);
   }
 }
