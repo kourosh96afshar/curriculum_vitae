@@ -1,5 +1,7 @@
-// import 'package:curriculum_vitae/core/enums/app_enums.dart';
-// import 'package:curriculum_vitae/core/utils/constants.dart';
+import 'package:curriculum_vitae/config/theme/app_colors.dart';
+import 'package:curriculum_vitae/config/theme/app_decorations.dart';
+import 'package:curriculum_vitae/core/design_system/app_radius.dart';
+import 'package:curriculum_vitae/features/app/presentation/widgets/skills_box.dart';
 import 'package:flutter/material.dart';
 
 class Skills extends StatelessWidget {
@@ -8,7 +10,7 @@ class Skills extends StatelessWidget {
   final Color shadow;
   final VoidCallback onTap;
   final bool isSelect;
-  final SkillsType type;
+  final SkillType type;
 
   const Skills({
     super.key,
@@ -24,12 +26,13 @@ class Skills extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      // borderRadius: AppSizes.circle10,
+      borderRadius: AppRadius.circle10,
       child: Container(
         decoration: isSelect
-            ? BoxDecoration(
-                // borderRadius: AppSizes.circle10,
-                // color: AppColors.skillBackground,
+            ? AppDecorations.skill(
+                Theme.of(context).colorScheme.brightness == Brightness.dark
+                    ? AppColors.surfaceDarkColor
+                    : AppColors.surfaceLightColor,
               )
             : null,
         height: 110,
@@ -39,25 +42,15 @@ class Skills extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              decoration: isSelect
-                  ? BoxDecoration(
-                      boxShadow: [BoxShadow(color: shadow, blurRadius: 20)],
-                    )
-                  : null,
+              decoration: isSelect ? AppDecorations.shadow(shadow) : null,
               child: Image.asset(height: 50, width: 50, imagePath),
             ),
-            Text(title, style: Theme.of(context).textTheme.bodySmall),
+            Text(title),
           ],
         ),
       ),
     );
   }
+}
 
-}
-  enum SkillsType{
-  photoshop,
-  xd,
-  illustrator,
-  afterEffect,
-  lightRoom,
-}
+enum SkillsType { photoshop, xd, illustrator, afterEffect, lightRoom }

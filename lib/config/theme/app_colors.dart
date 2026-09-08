@@ -4,7 +4,10 @@ class AppColors {
   AppColors._();
 
   ///theme
-  static Color primary = Color(0xFFec407a);
+  static const Color primary = Color(0xFFec407a);
+  static const Color blueShadow = Color(0xFF2196f3);
+  static const Color orangeShadow = Color(0xFFffe0b2);
+  static const Color purpleShadow = Color(0xFF1565c0);
 
   ///dark-Theme
   static const Color primaryDarkTextColor = Color(0xFFffffff);
@@ -17,5 +20,6 @@ class AppColors {
   static Color primaryLightTextColor = Color(0xFF212121);
   static Color secondaryLightTextColor = Color(0xFF212121)
       .withValues(alpha: 0.8);
+  static const Color surfaceLightColor = Color(0x0D000000);
   static const Color appBarLightColor = Color(0xFFebebeb);
 }

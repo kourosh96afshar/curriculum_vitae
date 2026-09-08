@@ -15,16 +15,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  LanguageSelect languageApp = LanguageSelect.en;
-  ThemeSelect themeApp = ThemeSelect.light;
-  bool get isDark => themeApp == ThemeSelect.dark;
+  _LanguageSelect languageApp = _LanguageSelect.en;
+  _ThemeSelect themeApp = _ThemeSelect.light;
+  bool get isDark => themeApp == _ThemeSelect.dark;
 
-  Locale get localeApp => languageApp == LanguageSelect.en
+  Locale get localeApp => languageApp == _LanguageSelect.en
       ? const Locale('en')
       : const Locale('fa');
 
   ThemeMode get themeMode =>
-      themeApp == ThemeSelect.dark ? ThemeMode.dark : ThemeMode.light;
+      themeApp == _ThemeSelect.dark ? ThemeMode.dark : ThemeMode.light;
 
   @override
   Widget build(BuildContext context) {
@@ -46,21 +46,21 @@ class _MyAppState extends State<MyApp> {
 
   void updateLanguage() {
     setState(() {
-      languageApp = languageApp == LanguageSelect.en
-          ? LanguageSelect.fa
-          : LanguageSelect.en;
+      languageApp = languageApp == _LanguageSelect.en
+          ? _LanguageSelect.fa
+          : _LanguageSelect.en;
     });
   }
 
   void updateThemeMode() {
     setState(() {
-      themeApp = themeApp == ThemeSelect.dark
-          ? ThemeSelect.light
-          : ThemeSelect.dark;
+      themeApp = themeApp == _ThemeSelect.dark
+          ? _ThemeSelect.light
+          : _ThemeSelect.dark;
     });
   }
 }
 
-enum LanguageSelect { en, fa }
+enum _LanguageSelect { en, fa }
 
-enum ThemeSelect { light, dark }
+enum _ThemeSelect { light, dark }

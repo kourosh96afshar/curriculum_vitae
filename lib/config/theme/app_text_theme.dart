@@ -13,27 +13,27 @@ class AppTextThemes {
   }
 
   static TextTheme _enPrimaryTextTheme(ColorScheme colorScheme) {
-    TextStyle appTextStyle(double fontSize) {
-      return TextStyle(fontSize: fontSize, color: colorScheme.onSurface);
-    }
+    // TextStyle appTextStyle(double fontSize) {
+    //   return TextStyle(fontSize: fontSize, color: colorScheme.onSurface);
+    // }
 
     return GoogleFonts.latoTextTheme(
       TextTheme(
-        displaySmall: appTextStyle(36),
-        displayMedium: appTextStyle(45),
-        displayLarge: appTextStyle(57),
-        headlineSmall: appTextStyle(24),
-        headlineMedium: appTextStyle(28),
-        headlineLarge: appTextStyle(32),
-        titleSmall: appTextStyle(14),
-        titleMedium: appTextStyle(16),
-        titleLarge: appTextStyle(22),
-        bodySmall: appTextStyle(12),
-        bodyMedium: appTextStyle(14),
-        bodyLarge: appTextStyle(16),
-        labelSmall: appTextStyle(11),
-        labelMedium: appTextStyle(12),
-        labelLarge: appTextStyle(14),
+        // displaySmall: appTextStyle(36),
+        // displayMedium: appTextStyle(45),
+        // displayLarge: appTextStyle(57),
+        // headlineSmall: appTextStyle(24),
+        // headlineMedium: appTextStyle(28),
+        // headlineLarge: appTextStyle(32),
+        // titleSmall: appTextStyle(14),
+        // titleMedium: appTextStyle(16),
+        // titleLarge: appTextStyle(22),
+        // bodySmall: appTextStyle(12),
+        // bodyMedium: appTextStyle(14),
+        // bodyLarge: appTextStyle(16),
+        // labelSmall: appTextStyle(11),
+        // labelMedium: appTextStyle(12),
+        // labelLarge: appTextStyle(14),
       ),
     );
   }

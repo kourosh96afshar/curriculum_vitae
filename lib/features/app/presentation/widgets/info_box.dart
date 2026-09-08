@@ -33,18 +33,29 @@ class InfoBox extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: crossStart,
                   children: [
-                    Text(localizations.name, style: textTheme),
+                    Text(
+                      localizations.name,
+                      style: Theme.of(context).textTheme.bodyLarge
+                          ?.copyWith(fontWeight: FontWeight.bold),
+                    ),
                     Row(
                       children: [
-                        Text(localizations.job, style: textTheme),
+                        Text(localizations.job),
                         Spacer(),
                         Icon(Icons.favorite_border_sharp),
                       ],
                     ),
                     Row(
                       children: [
-                        Icon(Icons.location_on, color: AppColors.appBarDarkColor),
-                        Text(localizations.location, style: textTheme),
+                        Icon(
+                          Icons.location_on,
+                          color:
+                              Theme.of(context).colorScheme.brightness ==
+                                  Brightness.dark
+                              ? AppColors.secondaryDarkTextColor
+                              : AppColors.secondaryLightTextColor,size: 14,
+                        ),
+                        Text(localizations.location),
                       ],
                     ),
                   ],
@@ -52,7 +63,7 @@ class InfoBox extends StatelessWidget {
               ),
             ],
           ),
-          Text(localizations.summary, style: textTheme),
+          Text(localizations.summary),
         ],
       ),
     );

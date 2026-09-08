@@ -1,47 +1,16 @@
-/*
+import 'package:curriculum_vitae/core/design_system/app_radius.dart';
 import 'package:flutter/material.dart';
 
-class AppDecorations extends ThemeExtension<AppDecorations> {
-  final BoxDecoration cardDecoration;
+class AppDecorations {
+  AppDecorations._(); //didn't create instance
 
-  const AppDecorations({required this.cardDecoration});
-
-  @override
-  AppDecorations copyWith({BoxDecoration? cardDecoration}) {
-    return AppDecorations(
-      cardDecoration: cardDecoration ?? this.cardDecoration,
-    );
+  static BoxDecoration skill(Color color) {
+    return BoxDecoration(borderRadius: AppRadius.circle10, color: color);
   }
 
-  @override
-  AppDecorations lerp(ThemeExtension<AppDecorations>? other, double t) {
-    if (other is! AppDecorations) return this;
-    return this;
-    // AppDecorations(
-    //   cardDecoration: BoxDecoration.lerp(
-    //     cardDecoration,
-    //     other.cardDecoration,
-    //     t,
-    //   )!,
-    // );
+  static BoxDecoration shadow(Color shadow) {
+    return BoxDecoration(boxShadow: [BoxShadow(color: shadow, blurRadius: 20)]);
   }
-}
-
-
-
-class AppDecorations2 {
-  AppDecorations2._(); //didn't create instance
-
-  static final BoxDecoration  card = BoxDecoration(
-    color: Colors.white,
-    borderRadius: BorderRadius.circular(12),
-    boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 4)],
-  );
-
-  static final BoxDecoration chatBubbleSent = BoxDecoration(
-    color: Colors.blue.shade100,
-    borderRadius: BorderRadius.circular(16),
-  );
 
   static final BoxDecoration chatBubbleReceived = BoxDecoration(
     color: Colors.grey.shade200,
@@ -53,4 +22,3 @@ class AppDecorations2 {
     borderRadius: BorderRadius.circular(24),
   );
 }
-*/

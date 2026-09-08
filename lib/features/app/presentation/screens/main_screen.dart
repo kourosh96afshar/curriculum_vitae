@@ -1,5 +1,6 @@
 import 'package:curriculum_vitae/core/component/custom_app_bar.dart';
 import 'package:curriculum_vitae/features/app/presentation/widgets/info_box.dart';
+import 'package:curriculum_vitae/features/app/presentation/widgets/skills_box.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -34,7 +35,7 @@ class _MainScreenState extends State<MainScreen> {
           children: [
             InfoBox(),
             Divider(),
-            // SkillsBox(),
+            SkillsBox(),
             // Divider(),
             // PersonalInformation(),
           ],
