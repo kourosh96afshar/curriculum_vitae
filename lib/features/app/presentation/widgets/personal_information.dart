@@ -1,4 +1,5 @@
-
+import 'package:curriculum_vitae/config/localization/l10n/app_localizations.dart';
+import 'package:curriculum_vitae/core/design_system/app_spacing.dart';
 import 'package:flutter/material.dart';
 
 class PersonalInformation extends StatelessWidget {
@@ -6,45 +7,30 @@ class PersonalInformation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final localize = AppLocalizations.of(context)!;
+    final localize = AppLocalizations.of(context)!;
     final textTheme = Theme.of(context).textTheme.bodySmall;
     return Padding(
-      padding:EdgeInsetsGeometry.all(0),
-      //  AppSizes.sym3016,
+      padding: AppSpacing.sym3016,
       child: Column(
         spacing: 20,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Text(localize.personalInformation, style: textTheme),
+          Text(localize.personalInformation, style: textTheme),
           TextField(
-            style: textTheme,
             decoration: InputDecoration(
-              // border: OutlineInputBorder(borderRadius: AppSizes.circle10),
               filled: true,
-              // fillColor: AppColors.skillBackground,
-              // hint: Text(localize.email, style: textTheme),
-              prefixIcon: Icon(
-                Icons.alternate_email,
-                // color: AppColors.textTheme,
-              ),
+              hint: Text(localize.email),
+              prefixIcon: Icon(Icons.alternate_email),
             ),
           ),
           TextField(
-            style: textTheme,
             decoration: InputDecoration(
-              // border: OutlineInputBorder(borderRadius: AppSizes.circle10),
               filled: true,
-              // fillColor: AppColors.skillBackground,
-              // hint: Text(localize.password, style: textTheme),
-              // prefixIcon: Icon(Icons.lock, color: AppColors.textTheme),
+              hint: Text(localize.password),
+              prefixIcon: Icon(Icons.lock),
             ),
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text(''
-              // localize.save, style: textTheme
-              ),
-          ),
+          ElevatedButton(onPressed: () {}, child: Text(localize.save)),
         ],
       ),
     );

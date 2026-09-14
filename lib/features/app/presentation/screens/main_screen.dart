@@ -1,5 +1,6 @@
 import 'package:curriculum_vitae/core/component/custom_app_bar.dart';
 import 'package:curriculum_vitae/features/app/presentation/widgets/info_box.dart';
+import 'package:curriculum_vitae/features/app/presentation/widgets/personal_information.dart';
 import 'package:curriculum_vitae/features/app/presentation/widgets/skills_box.dart';
 import 'package:flutter/material.dart';
 
@@ -36,8 +37,8 @@ class _MainScreenState extends State<MainScreen> {
             InfoBox(),
             Divider(),
             SkillsBox(),
-            // Divider(),
-            // PersonalInformation(),
+            Divider(),
+            PersonalInformation(),
           ],
         ),
       ),
