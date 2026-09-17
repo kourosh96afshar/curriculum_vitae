@@ -1,9 +1,0 @@
-/*
-Environment.production
-Environment.development
-Environment.staging
-
-baseUrl
-apiKey
-appName
-*/

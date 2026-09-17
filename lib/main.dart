@@ -4,6 +4,13 @@ import 'package:curriculum_vitae/features/app/presentation/screens/main_screen.d
 import 'package:flutter/material.dart';
 
 void main() {
+
+  // WidgetsFlutterBinding.ensureInitialized();
+
+  // final environment = BuildEnvironment.fromDartDefine();
+
+  // await setupDependencies(environment);
+
   runApp(const MyApp());
 }
 
