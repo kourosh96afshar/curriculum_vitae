@@ -59,6 +59,46 @@ class AppTheme {
   }
 
   static ThemeData _buildDarkTheme(String languageCode) {
-    return ThemeData(useMaterial3: true, brightness: Brightness.dark);
+    final ColorScheme colorScheme = ColorScheme.dark(
+      brightness: Brightness.dark,
+      primary: AppColors.primary,
+      secondary: AppColors.secondaryDarkTextColor,
+      surface: AppColors.primaryLightTextColor,
+      outlineVariant: AppColors.primaryDarkTextColor,
+    );
+    final TextTheme textTheme = languageCode == 'en'
+        ? AppTextThemes.en(colorScheme)
+        : AppTextThemes.fa(colorScheme);
+    return ThemeData(
+      useMaterial3: true,
+      colorScheme: colorScheme,
+      textTheme: textTheme,
+
+      appBarTheme: AppBarTheme(
+        elevation: 0,
+        backgroundColor: AppColors.appBarDarkColor,
+        foregroundColor: AppColors.primaryDarkTextColor,
+      ),
+
+      inputDecorationTheme: InputDecorationTheme(
+        labelStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+        border: OutlineInputBorder(
+          borderRadius: AppRadius.circle10,
+          borderSide: BorderSide.none,
+        ),
+        filled: true,
+        fillColor: AppColors.surfaceDarkColor,
+        hintStyle: textTheme.bodySmall,
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ButtonStyle(
+          backgroundColor: WidgetStateProperty.all(AppColors.primary),
+          minimumSize: WidgetStatePropertyAll(const Size(double.infinity, 48)),
+          foregroundColor: WidgetStatePropertyAll(
+            AppColors.primaryDarkTextColor,
+          ),
+        ),
+      ),
+    );
   }
 }
