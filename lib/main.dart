@@ -10,7 +10,7 @@ void main() {
   // final environment = BuildEnvironment.fromDartDefine();
 
   // await setupDependencies(environment);
-
+//gaagag
   runApp(const MyApp());
 }
 
